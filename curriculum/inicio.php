@@ -39,7 +39,7 @@
 
 	
 	
-    <title>Mi currículum</title>
+    <title>Mi currículums</title>
 </head>
 <body>
     <header id="arriba" class="parallax">
