@@ -57,7 +57,7 @@
 						</li>
 						
 				
-				<li><a href="">Experiencia</a>
+				<li><a href="">Experiencia laboral</a>
 				
 				</li>
 				<li><a href="">Configuracion</a>
