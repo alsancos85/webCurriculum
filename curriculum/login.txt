@@ -1,0 +1,86 @@
+<?php
+$servidor = "localhost";
+$usuario = "prueba";
+$contraseña = "prueba123";
+$BD = "curriculum";
+$conexion = new mysqli($servidor, $usuario, $contraseña, $BD);
+
+if ($conexion->connect_error) {
+    die('<strong>No pudo conectarse:</strong> ' . $conexion->connect_error);
+}
+
+$sql = "SELECT * FROM datos_personales WHERE Id='1'";
+$resultado = $conexion->query($sql);
+
+if ($resultado->num_rows > 0) {
+    while ($fila = $resultado->fetch_assoc()) {
+        $Nombre = $fila["Nombre"]; // Alberto
+        $Apellidos = $fila["Apellidos"]; // Sanchis
+        $Edad = $fila["Edad"];
+        $Telefono = $fila["Telefono"];
+        $Email = $fila["email"];
+        $Direccion = $fila["Direccion"];
+    }
+} else {
+    echo "No se encontraron resultados.";
+}
+
+
+
+$conexion->close();
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="icon" href="images/favicon.jpg" sizes="16x16" type="image/jpg">
+    <title>Mi currículum</title>
+</head>
+<body>
+    <header id="arriba" class="parallax">
+        <div class="exp-text">
+            <div style="margin-left:100px; width:1000px;">
+                <h1> Iniciar sesion </h1>
+            </div>
+        </div>
+    </header>
+
+    <nav id="menu">
+        <ul>
+            <li><a href="#menu">&#9776;</a></li>
+            <li><a href="#">x</a></li>
+            <li><a href="#info">Información</a></li>
+            <li><a href="#edu">Educación</a></li>
+            <li><a href="#exp">Experiencia Laboral</a></li>
+            <li><a href="#skills">Habilidades Profesionales</a></li>
+            <li><a href="#hobbies">Intereses y Hobbies</a></li>
+        </ul>
+    </nav>
+
+    <div id="info">
+        <div>
+            <h4>Información</h4>
+          
+        </div>
+    </div>
+
+    <div id="skills">
+    
+    </div>
+
+    <div id="hobbies">
+     
+    </div>
+
+    <footer>
+        <div>
+            <p>Sitio desarrollado por Matías Gabriel Pérez.<br><a href="#arriba">Volver arriba</a></p>
+            <a href="https://github.com/DiestroCorleone" target="_blank"><img src="https://icongr.am/devicon/github-original.svg?size=128&color=1d001f"></a>
+            <a href="https://www.linkedin.com/in/mat%C3%ADas-gabriel-p%C3%A9rez-b163691b4/" target="_blank"><img src="https://icongr.am/entypo/linkedin-with-circle.svg?size=128&color=1d001f"></a>
+        </div>
+    </footer>
+</body>
+</html>
